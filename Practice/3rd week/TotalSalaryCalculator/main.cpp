@@ -2,13 +2,11 @@
 #include <iostream>
 #include <string>
 
+#include "common.h"
+
 using namespace std;
 
 bool saleValidator(float input);
-
-template <class T>
-void userInputLoop(T& backingField, string& inputField, const string& inputRequestMessage,
-                   function<bool(T)>& inputValidationFunction);
 
 int main()
 {
@@ -53,35 +51,4 @@ int main()
 bool saleValidator(float input)
 {
     return input >= 0;
-}
-
-template <class T>
-void userInputLoop(T& backingField, string& inputField, const string& inputRequestMessage,
-                   function<bool(T)>& inputValidationFunction)
-{
-    bool success = false;
-    size_t numberOfCharactersParsed;
-
-    while (!success)
-    {
-        cout << inputRequestMessage;
-        cin >> inputField;
-
-        try
-        {
-            // NOTE: stof = String TO Float (I think...)
-            backingField = stof(inputField, &numberOfCharactersParsed);
-
-            success = inputField.length() == numberOfCharactersParsed
-                      && inputValidationFunction(backingField);
-        }
-        catch (...)
-        {
-        }
-
-        if (!success)
-        {
-            cout << "Entrada invalida, intentelo de nuevo" << endl;
-        }
-    }
 }

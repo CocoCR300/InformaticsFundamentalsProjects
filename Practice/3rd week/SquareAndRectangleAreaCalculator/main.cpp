@@ -1,22 +1,23 @@
 #include <cmath>
 #include <iostream>
+#include <windows.h>
+
+#include "common.h"
 
 using namespace std;
 
 int main()
 {
-    short selection = -1;
+    SetConsoleOutputCP(CP_UTF8);
 
+    function selectionValidationFunction([](short input) -> bool { return input == 0 || input == 1; });
+    short selection = -1;
+    string selectionAsString;
     cout << "Elija una figura para calcular su area:\n0. Cuadrado\n1. Rectangulo\n" << endl;
 
     while (selection != 0 && selection != 1)
     {
-        cin >> selection;
-
-        if (selection != 0 && selection != 1)
-        {
-            cout << "Opcion invalida, intentelo de nuevo: ";
-        }
+        userInputLoop(selection, selectionAsString, "", selectionValidationFunction);
     }
 
     if (selection == 0)

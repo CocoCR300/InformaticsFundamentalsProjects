@@ -4,3 +4,5 @@ project(TotalSalaryCalculator)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(TotalSalaryCalculator main.cpp)
+
+target_include_directories(TotalSalaryCalculator PUBLIC "../../../Common")
