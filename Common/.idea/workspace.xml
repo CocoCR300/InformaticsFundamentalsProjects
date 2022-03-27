@@ -11,12 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2696f8dc-d8b4-4188-b032-eaee71b48746" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Practice/3rd week/SquareAndRectangleAreaCalculator/.idea/dictionaries/oscar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/common.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Practice/3rd week/SquareAndRectangleAreaCalculator/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/SquareAndRectangleAreaCalculator/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practice/3rd week/SquareAndRectangleAreaCalculator/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/SquareAndRectangleAreaCalculator/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/3rd week/SquareAndRectangleAreaCalculator/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/SquareAndRectangleAreaCalculator/src/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +55,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator" />
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="A:\Projects\Fundamentos de informatica\Common\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
@@ -70,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1648395268310</updated>
       <workItem from="1648395269913" duration="24000" />
-      <workItem from="1648395342574" duration="8674000" />
+      <workItem from="1648395342574" duration="9498000" />
     </task>
     <servers />
   </component>

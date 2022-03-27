@@ -9,7 +9,7 @@ using namespace std;
 
 template <class T>
 void userInputLoop(T& backingField, string& inputField, const string& inputRequestMessage,
-                   function<bool(T)>& inputValidationFunction);
+                   const function<bool(T)>& inputValidationFunction);
 
 // NOTE: Template definitions and implementations can't be put in separate files, it causes
 // a linker error, and the "solution" to this, the "export" keyword, is implemented just in

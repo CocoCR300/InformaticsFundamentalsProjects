@@ -27,7 +27,7 @@ int main()
         cout << "Ingrese la medida del lado: ";
         cin >> side;
 
-        cout << "\nEl area del cuadrado es de: " << pow(side, 2);
+        cout << "\nEl area del cuadrado es de: " << pow(side, 2) << endl;
     }
     else
     {
@@ -39,7 +39,7 @@ int main()
         cout << "\nIngrese la medida del ancho: ";
         cin >> width;
 
-        cout << "\nEl area del rectangulo es de: " << length * width;
+        cout << "\nEl area del rectangulo es de: " << length * width << endl;
     }
 
     system("pause");
