@@ -1,6 +1,7 @@
 #include <functional>
 #include <iostream>
 #include <string>
+#include <windows.h>
 
 #include "common.h"
 
@@ -10,6 +11,8 @@ bool saleValidator(float input);
 
 int main()
 {
+    SetConsoleOutputCP(CP_UTF8);
+
     // In C++, lambdas are structured like this: [capture](parameter list) -> return type { body }
     function baseSalaryValidationFunction([](float input) -> bool { return input > 0; });
     function saleValidationFunction(saleValidator);
@@ -19,8 +22,8 @@ int main()
 
     userInputLoop(baseSalary, userInput, "Ingrese su sueldo base: ", baseSalaryValidationFunction);
 
-    cout << "\nIngrese los montos de las ventas que realizo durante este mes, separe cada uno en una nueva linea "
-            "pulsando la tecla 'Enter'.\nPara terminar de ingresar los valores, digite el numero cero y pulse "
+    cout << "\nIngrese los montos de las ventas que realizó durante este mes, separe cada uno en una nueva línea "
+            "pulsando la tecla 'Enter'.\nPara terminar de ingresar los valores, digite el número cero y pulse "
             "la tecla 'Enter'" << endl;
 
     while (enteredSaleAmount != 0)
@@ -41,8 +44,8 @@ int main()
 
     cout.precision(2);
     cout << fixed << "\nTotal de las ventas realizadas este mes: " << salesTotal <<
-            "\nComision del 15% por el total de las ventas: " << commission <<
-            "\nSalario total (Sueldo base + comision por ventas): " << baseSalary + commission << endl;
+                     "\nComisión del 15% por el total de las ventas: " << commission <<
+                     "\nSalario total (Sueldo base + comisión por ventas): " << baseSalary + commission << endl;
 
     system("pause");
     return 0;

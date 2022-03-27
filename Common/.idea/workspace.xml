@@ -12,12 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2696f8dc-d8b4-4188-b032-eaee71b48746" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/common.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practice/3rd week/SquareAndRectangleAreaCalculator/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/SquareAndRectangleAreaCalculator/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practice/3rd week/SquareAndRectangleAreaCalculator/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/SquareAndRectangleAreaCalculator/src/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1648395268310</updated>
       <workItem from="1648395269913" duration="24000" />
-      <workItem from="1648395342574" duration="9498000" />
+      <workItem from="1648395342574" duration="10211000" />
     </task>
     <servers />
   </component>
