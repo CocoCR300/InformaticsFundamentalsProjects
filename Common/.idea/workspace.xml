@@ -11,9 +11,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2696f8dc-d8b4-4188-b032-eaee71b48746" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/BMICalculator/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/BMICalculator/.idea/BMICalculator.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/BMICalculator/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/BMICalculator/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/BMICalculator/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/BMICalculator/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/BMICalculator/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/CatVaccination/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/CatVaccination/.idea/CatVaccination.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/CatVaccination/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/CatVaccination/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/CatVaccination/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/CatVaccination/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/4th week/CatVaccination/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/common.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,20 +62,14 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practice/4th week/BMICalculator" />
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+    <property name="structure.view.defaults.are.configured" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="A:\Projects\Fundamentos de informatica\Common\src" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -72,7 +80,10 @@
       <option name="presentableId" value="Default" />
       <updated>1648395268310</updated>
       <workItem from="1648395269913" duration="24000" />
-      <workItem from="1648395342574" duration="10211000" />
+      <workItem from="1648395342574" duration="10213000" />
+      <workItem from="1648564416043" duration="1142000" />
+      <workItem from="1648572646373" duration="787000" />
+      <workItem from="1648751195992" duration="1092000" />
     </task>
     <servers />
   </component>

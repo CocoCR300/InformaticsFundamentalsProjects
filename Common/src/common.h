@@ -41,7 +41,7 @@ void userInputLoop(T& backingField, string& inputField, const string& inputReque
 
         if (!success)
         {
-            cout << "Entrada invalida, intentelo de nuevo" << endl;
+            cout << "Entrada inválida, intentelo de nuevo" << endl;
         }
 
     }
