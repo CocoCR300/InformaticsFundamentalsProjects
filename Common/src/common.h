@@ -1,5 +1,5 @@
-#ifndef COMMON_COMMON_H
-#define COMMON_COMMON_H
+#ifndef COMMON_H
+#define COMMON_H
 
 #include <functional>
 #include <iostream>
@@ -17,9 +17,9 @@ void userInputLoop(T& backingField, string& inputField, const string& inputReque
 // More info: https://stackoverflow.com/a/115735
 template <class T>
 void userInputLoop(T& backingField, string& inputField, const string& inputRequestMessage,
-                   function<bool(T)>& inputValidationFunction)
+                   const function<bool(T)>& inputValidationFunction)
 {
-    bool success = false;
+    volatile bool success = false;
     size_t numberOfCharactersParsed;
 
     while (!success)
@@ -47,4 +47,4 @@ void userInputLoop(T& backingField, string& inputField, const string& inputReque
     }
 }
 
-#endif //COMMON_COMMON_H
+#endif //COMMON_H
