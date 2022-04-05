@@ -19,10 +19,8 @@ int main()
 {
     SetConsoleOutputCP(CP_UTF8);
 
-    float average = 0;
-    float finalTestGrade, finalProjectGrade, finalTestPercentage, finalProjectPercentage;
-    float partialTestGrades[3];
-    float partialTestPercentages[3];
+    float average = 0, finalTestGrade, finalProjectGrade, finalTestPercentage, finalProjectPercentage,
+          partialTestGrades[3], partialTestPercentages[3];
     function gradeValidationFunction(gradeValidator);
     int i;
     string userInput;
@@ -31,8 +29,10 @@ int main()
 
     for (i = 0; i < 3; i++)
     {
-        string message = "Nota del examen parcial n° " + std::to_string(i + 1) + ":";
+        string message = "Nota del examen parcial n° " + to_string(i + 1) + ": ";
         userInputLoop(partialTestGrades[i], userInput, message, gradeValidationFunction);
+
+        average += partialTestPercentages[i] = partialTestGrades[i] * 15 / 100;
     }
 
     userInputLoop(finalTestGrade, userInput, "Ingrese la nota obtenida en el examen final: ", gradeValidationFunction);
@@ -43,7 +43,6 @@ int main()
 
     for (i = 0; i < 3; i++)
     {
-        average += partialTestPercentages[i] = partialTestGrades[i] * 15 / 100;
         cout << "\nExamen parcial n° " << i + 1 << ": " << partialTestPercentages[i];
     }
 
