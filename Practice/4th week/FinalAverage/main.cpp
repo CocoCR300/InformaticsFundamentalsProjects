@@ -8,7 +8,6 @@
 //promedio es mayor o igual a 70 despliegue un mensaje que diga: Estudiante aprobado, en
 //caso contrario un mensaje que diga: estudiante reprobado.
 
-#include <iostream>
 #include <windows.h>
 
 #include <common.h>

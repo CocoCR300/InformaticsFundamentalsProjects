@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
+    <generated>
+      <config projectName="Common" targetName="Common" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -12,7 +14,16 @@
   <component name="ChangeListManager">
     <list default="true" id="2696f8dc-d8b4-4188-b032-eaee71b48746" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/common.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/3rd week/SquareAndRectangleAreaCalculator/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/SquareAndRectangleAreaCalculator/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/3rd week/TotalSalaryCalculator/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/4th week/AnnualBudgetDistribution/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/4th week/AnnualBudgetDistribution/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/4th week/BMICalculator/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/4th week/BMICalculator/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/4th week/CatVaccination/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/4th week/CatVaccination/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Practice/4th week/FinalAverage/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/4th week/FinalAverage/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/4th week/WorkerSalary/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/4th week/WorkerSalary/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +33,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -57,6 +69,18 @@
       <recent name="A:\Projects\Fundamentos de informatica\Common\src" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Common" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Common" TARGET_NAME="Common" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -72,7 +96,11 @@
       <workItem from="1648751195992" duration="2863000" />
       <workItem from="1648910939043" duration="1388000" />
       <workItem from="1649119810931" duration="431000" />
-      <workItem from="1649167524271" duration="602000" />
+      <workItem from="1649167524271" duration="5030000" />
+      <workItem from="1649209623262" duration="65000" />
+      <workItem from="1649217632093" duration="77000" />
+      <workItem from="1649458375706" duration="2426000" />
+      <workItem from="1649511618444" duration="17631000" />
     </task>
     <servers />
   </component>

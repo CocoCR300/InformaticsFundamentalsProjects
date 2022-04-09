@@ -5,7 +5,6 @@
 // cantidad de horas extras, el monto y el salario total. Solicite al usuario el total de horas
 // trabajadas.
 
-#include <iostream>
 #include <windows.h>
 
 #include <common.h>

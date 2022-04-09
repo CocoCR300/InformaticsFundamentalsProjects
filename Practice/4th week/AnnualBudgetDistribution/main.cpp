@@ -5,7 +5,6 @@
 // * Administración 25%
 // Obtener la cantidad de dinero a recibir cada área, para cualquier monto presupuestado
 
-#include <iostream>
 #include <windows.h>
 
 #include <common.h>

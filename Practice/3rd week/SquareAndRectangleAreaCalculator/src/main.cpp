@@ -1,8 +1,7 @@
 #include <cmath>
-#include <iostream>
 #include <windows.h>
 
-#include "common.h"
+#include <common.h>
 
 using namespace std;
 

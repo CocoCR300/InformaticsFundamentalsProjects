@@ -3,4 +3,4 @@ project(Common)
 
 set(CMAKE_CXX_STANDARD 20)
 
-# add_library(Common common.cpp)
+add_library(Common src/common.cpp)
