@@ -1,5 +1,6 @@
 // Universidad Nacional de Costa Rica - Sede Liberia
 // Primer proyecto del curso Fundamentos de informatica (EIF200)
+// I ciclo, año 2022
 //
 // PROPUESTA #1
 // 1 - Recibir por teclado un número romano (del I al MMM)
@@ -16,136 +17,136 @@
 
 using namespace std;
 
+#pragma region Constants
 const map<short, string> numbersMorseCodeRepresentation =
-{
-    { 1, ".----" },
-    { 2, "..---" },
-    { 3, "...--" },
-    { 4, "....-" },
-    { 5, "....." },
-    { 6, "-...." },
-    { 7, "--..." },
-    { 8, "---.." },
-    { 9, "----." },
-    { 0, "-----" },
-};
+        {
+            { 1, ".----" },
+            { 2, "..---" },
+            { 3, "...--" },
+            { 4, "....-" },
+            { 5, "....." },
+            { 6, "-...." },
+            { 7, "--..." },
+            { 8, "---.." },
+            { 9, "----." },
+            { 0, "-----" },
+        };
 
 const map<char, short> romanNumbersDecimalNumbersEquivalent =
-{
-    { 'I', 1 },
-    { 'V', 5 },
-    { 'X', 10 },
-    { 'L', 50 },
-    { 'C', 100 },
-    { 'D', 500 },
-    { 'M', 1000 },
-};
+        {
+                { 'I', 1 },
+                { 'V', 5 },
+                { 'X', 10 },
+                { 'L', 50 },
+                { 'C', 100 },
+                { 'D', 500 },
+                { 'M', 1000 },
+        };
 
-const short asteriskSoundDuration = 250;
-const short dashSoundDuration = asteriskSoundDuration * 3;
+const short morseCodeDotSoundDuration = 250;
+const short morseCodeDashSoundDuration = morseCodeDotSoundDuration * 3;
+#pragma endregion Constants
 
-constexpr bool canRomanLettersBeSubtracted(const short&, const short&);
+#pragma region Function declarations
+bool canRomanLettersBeSubtracted(const short&, const short&);
 
 bool romanDigitToDecimalNumber(const char&, short&);
 
 bool romanNumberToDecimalNumber(const string&, short&);
 
 void subtractOrAdd(bool, short&, const short&, const short&, int&);
-
-void test()
-{
-    short decimalNumber = 0;
-    string romanNumbers[] = { "XVIII", "MDCXII", "MMMX", "IX", "VCX", "I" };
-
-    for (const string& romanNumber : romanNumbers)
-    {
-        if (romanNumberToDecimalNumber(romanNumber, decimalNumber))
-        {
-            cout << romanNumber << " is " << decimalNumber << "\n";
-        }
-        else
-        {
-            cout << "Número romano inválido: " << romanNumber << "\n";
-        }
-
-        decimalNumber = 0;
-    }
-}
+#pragma endregion Function declarations
 
 int main()
 {
+    bool isRomanNumberValid = false;
     short decimalNumber = 0;
     string romanNumber;
 
+    // Se establece el código de página de la consola a UTF8 para que la misma admita, entre otros caracteres, las
+    // letras tildadas
     SetConsoleOutputCP(CP_UTF8);
 
-    cout << "Digite el numero romano (máximo MMM = 3000):\n";
-    cin >> romanNumber;
-
-    if (romanNumberToDecimalNumber(romanNumber, decimalNumber) && decimalNumber < 3001)
+    while (!isRomanNumberValid)
     {
-        vector<short> numbers;
+        cout << "Digite el numero romano (máximo MMM = 3000): ";
+        cin >> romanNumber;
 
-        cout << "\nEl número romano " << romanNumber << " tiene como equivalente en base decimal al número "
-             << decimalNumber << "\n";
-
-        while (decimalNumber > 0)
+        for (char &letter : romanNumber)
         {
-            short digit = decimalNumber % 10;
-            decimalNumber /= 10;
-
-            numbers.insert(numbers.begin(), digit);
+            letter = toupper(letter);
         }
 
-        cout << "Se reproducirá la representación sonora y escrita en código Morse del número decimal obtenido en: ";
-        Sleep(1000);
+        isRomanNumberValid = romanNumberToDecimalNumber(romanNumber, decimalNumber) && decimalNumber < 3001;
 
-        for (int i = 5; i > 0; i--)
+        if (isRomanNumberValid)
         {
-            cout << i << "..";
+            cout << "\nEl número romano " << romanNumber << " tiene como equivalente decimal al número "
+                 << decimalNumber << "\n";
+
+            string soundSequence;
+
+            while (decimalNumber > 0)
+            {
+                short digit = decimalNumber % 10;
+                decimalNumber /= 10;
+
+                soundSequence.insert(0, numbersMorseCodeRepresentation.at(digit));
+            }
+
+            cout << "Se reproducirá la representación sonora y escrita en código Morse del número decimal obtenido en: ";
             Sleep(1000);
-        }
 
-        cout << "\n";
+            for (int i = 5; i > 0; i--)
+            {
+                cout << i << "..";
+                Sleep(1000);
+            }
 
-        for (short digit : numbers)
-        {
-            string soundSequence = numbersMorseCodeRepresentation.at(digit);
+            cout << "\n";
+
+            int soundCount = 0;
 
             for (char sound : soundSequence)
             {
                 cout << sound;
-                Beep(600, (sound == '-' ? dashSoundDuration : asteriskSoundDuration));
 
-//                if (sound == '-')
-//                {
-//                    cout << '-';
-//                    Beep(600, dashSoundDuration);
-//                }
-//                else
-//                {
-//                    cout << '.';
-//                    Beep(600, asteriskSoundDuration);
-//                }
+                Beep(600, (sound == '-' ? morseCodeDashSoundDuration : morseCodeDotSoundDuration));
+
+//            if (sound == '-')
+//            {
+//                cout << '-';
+//                Beep(600, morseCodeDashSoundDuration);
+//            }
+//            else
+//            {
+//                cout << '.';
+//                Beep(600, morseCodeDotSoundDuration);
+//            }
+
+                soundCount++;
+                if (soundCount == 5)
+                {
+                    cout << " ";
+                    soundCount = 0;
+                }
             }
 
-            cout << " ";
+            break;
         }
-    }
-    else
-    {
-        cout << "Número romano inválido: " << romanNumber << "\n";
+
+        cout << romanNumber << " no es un número romano. Intentelo de nuevo\n";
     }
 
     cout << endl;
-//    test();
 
     return 0;
 }
 
+#pragma region Function definitions
 // Busca una posible resta entre los valores decimales de dos números romanos y devuelve un valor booleano
 // indicando si existe alguna o no
-constexpr bool canRomanLettersBeSubtracted(const short& subtractor, const short& subtracting)
+bool canRomanLettersBeSubtracted(const short& subtractor, const short& subtracting)
 {
     switch (subtractor)
     {
@@ -160,10 +161,14 @@ constexpr bool canRomanLettersBeSubtracted(const short& subtractor, const short&
     }
 }
 
-// Convierte un número romano a su equivalente decimal, a diferencia de la función "romanDigitToDecimalNumber" que
-// convierte un único dígito romano a su equivalente número decimal
+// Trata de convertir un número romano a su equivalente número decimal y devuelve un valor booleano que indica si la
+// conversión fue existosa, además de guardar el resultado en "resultingDecimalNumber"
+// Presenta la diferencia con la función "romanDigitToDecimalNumber", la cual convierte un único dígito romano a su
+// equivalente número decimal
 bool romanNumberToDecimalNumber(const string& romanNumber, short& resultingDecimalNumber)
 {
+    resultingDecimalNumber = 0;
+
     if (romanNumber.length() == 1)
     {
         return romanDigitToDecimalNumber(romanNumber[0], resultingDecimalNumber);
@@ -211,15 +216,16 @@ bool romanNumberToDecimalNumber(const string& romanNumber, short& resultingDecim
     return true;
 }
 
-// Convierte un único dígito romano a su equivalente número decimal
-bool romanDigitToDecimalNumber(const char& romanDigit, short& decimalNumber)
+// Trata de convertir un único dígito romano a su equivalente número decimal y devuelve un valor booleano que indica si
+// la conversión fue existosa, además de guardar el resultado en "resultingDecimalNumber"
+bool romanDigitToDecimalNumber(const char& romanDigit, short& resultingDecimalNumber)
 {
     auto iterator = romanNumbersDecimalNumbersEquivalent.find(romanDigit);
     bool found = iterator != romanNumbersDecimalNumbersEquivalent.end();
 
     if (found)
     {
-        decimalNumber = iterator->second;
+        resultingDecimalNumber = iterator->second;
     }
 
     return found;
@@ -227,8 +233,8 @@ bool romanDigitToDecimalNumber(const char& romanDigit, short& decimalNumber)
 
 // Función de ayuda para la función "romanNumberToDecimalNumber" que suma a "decimalNumber" la resta de
 // "nextRomanDigit" y "currentRomanDigit" o, "currentRomanDigit", basado en el valor de "shouldCurrentSubtractNext"
-void subtractOrAdd(bool shouldCurrentSubtractNext, short &decimalNumber, const short &currentRomanDigit,
-                   const short &nextRomanDigit, int &index)
+void subtractOrAdd(bool shouldCurrentSubtractNext, short& decimalNumber, const short& currentRomanDigit,
+                   const short& nextRomanDigit, int& index)
 {
     if (shouldCurrentSubtractNext)
     {
@@ -240,3 +246,4 @@ void subtractOrAdd(bool shouldCurrentSubtractNext, short &decimalNumber, const s
         decimalNumber += currentRomanDigit;
     }
 }
+#pragma endregion Function definitions
