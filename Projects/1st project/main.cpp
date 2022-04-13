@@ -18,20 +18,6 @@
 using namespace std;
 
 #pragma region Constants
-const map<short, string> numbersMorseCodeRepresentation =
-        {
-            { 1, ".----" },
-            { 2, "..---" },
-            { 3, "...--" },
-            { 4, "....-" },
-            { 5, "....." },
-            { 6, "-...." },
-            { 7, "--..." },
-            { 8, "---.." },
-            { 9, "----." },
-            { 0, "-----" },
-        };
-
 const map<char, short> romanNumbersDecimalNumbersEquivalent =
         {
                 { 'I', 1 },
@@ -60,7 +46,7 @@ void subtractOrAdd(bool, short&, const short&, const short&, int&);
 int main()
 {
     bool isRomanNumberValid = false;
-    short decimalNumber = 0;
+    short decimalNumber;
     string romanNumber;
 
     // Se establece el código de página de la consola a UTF8 para que la misma admita, entre otros caracteres, las
@@ -84,14 +70,38 @@ int main()
             cout << "\nEl número romano " << romanNumber << " tiene como equivalente decimal al número "
                  << decimalNumber << "\n";
 
-            string soundSequence;
+            string fullMorseCode;
 
             while (decimalNumber > 0)
             {
+                // Insertar 5 guiones al inicio de la cadena de texto por cada dígito en el número decimal
+                fullMorseCode.insert(0, "-----");
+
+                // Se obtiene cada dígito del número contenido en "decimalNumber
                 short digit = decimalNumber % 10;
                 decimalNumber /= 10;
 
-                soundSequence.insert(0, numbersMorseCodeRepresentation.at(digit));
+                // Se genera el código morse del dígito obtenido
+                // Si el dígito es menor que 6, los puntos se ingresan al principio de la secuencia, en forma ascendente
+                // respecto a la cantidad de puntos. Caso contrario, los puntos se ingresan al final de la secuencia,
+                // y en forma descendente respecto a su cantidad
+                bool isDigitLessThanSix = digit < 6;
+                short i = 0, dotsToPut = (isDigitLessThanSix ? digit : 10 - digit);
+
+                while (dotsToPut > 0)
+                {
+                    if (isDigitLessThanSix)
+                    {
+                        fullMorseCode[i] = '.';
+                    }
+                    else
+                    {
+                        fullMorseCode[4 - i] = '.';
+                    }
+
+                    i++;
+                    dotsToPut--;
+                }
             }
 
             cout << "Se reproducirá la representación sonora y escrita en código Morse del número decimal obtenido en: ";
@@ -107,22 +117,11 @@ int main()
 
             int soundCount = 0;
 
-            for (char sound : soundSequence)
+            for (char sound : fullMorseCode)
             {
                 cout << sound;
 
                 Beep(600, (sound == '-' ? morseCodeDashSoundDuration : morseCodeDotSoundDuration));
-
-//            if (sound == '-')
-//            {
-//                cout << '-';
-//                Beep(600, morseCodeDashSoundDuration);
-//            }
-//            else
-//            {
-//                cout << '.';
-//                Beep(600, morseCodeDotSoundDuration);
-//            }
 
                 soundCount++;
                 if (soundCount == 5)
@@ -148,17 +147,9 @@ int main()
 // indicando si existe alguna o no
 bool canRomanLettersBeSubtracted(const short& subtractor, const short& subtracting)
 {
-    switch (subtractor)
-    {
-        case 1:
-            return subtracting == 5 || subtracting == 10;
-        case 10:
-            return subtracting == 50 || subtracting == 100;
-        case 100:
-            return subtracting == 500 || subtracting == 1000;
-        default:
-            return false;
-    }
+    return (subtractor == 1 && (subtracting == 5 || subtracting == 10)) ||
+           (subtractor == 10 && (subtracting == 50 || subtracting == 100)) ||
+           (subtractor == 100 && (subtracting == 500 || subtracting == 1000));
 }
 
 // Trata de convertir un número romano a su equivalente número decimal y devuelve un valor booleano que indica si la
