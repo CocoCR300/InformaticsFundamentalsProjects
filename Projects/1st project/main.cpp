@@ -13,7 +13,6 @@
 #include <map>
 #include <string>
 #include <windows.h>
-#include <vector>
 
 using namespace std;
 
@@ -49,8 +48,8 @@ int main()
     short decimalNumber;
     string romanNumber;
 
-    // Se establece el código de página de la consola a UTF8 para que la misma admita, entre otros caracteres, las
-    // letras tildadas
+    // Se establece el formato de codificación de caracteres de la consola a UTF8 para que la misma admita, entre otros
+    // caracteres, las letras tildadas
     SetConsoleOutputCP(CP_UTF8);
 
     while (!isRomanNumberValid)
