@@ -220,8 +220,8 @@ short userInputLoop<short>(string& inputField, const string& inputRequestMessage
 {
     auto shortNumberValidationFunction = [&inputValidationFunction](int input) -> bool
     {
-        return inputValidationFunction(input) && input >= numeric_limits<short>::min()
-               && input <= numeric_limits<short>::max();
+        return inputValidationFunction(input) && input >= SHRT_MIN
+               && input <= SHRT_MAX;
     };
 
     return userInputLoopInternal<int>(inputField, inputRequestMessage, invalidInputMessage, stoi,
