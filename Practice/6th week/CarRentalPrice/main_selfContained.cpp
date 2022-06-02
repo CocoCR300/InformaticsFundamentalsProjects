@@ -22,9 +22,7 @@
 
 #include <functional>
 #include <iostream>
-#include <limits>
 #include <string>
-#include <windows.h>
 
 using namespace std;
 
@@ -32,7 +30,7 @@ using namespace std;
 #define CIVIL_LIABILITY_COST 5000
 #define FEE_PERCENTAGE 0.15
 #define INSURANCE_PERCENTAGE 0.05
-#define INVALID_INPUT_MESSAGE "Entrada inválida, intentelo de nuevo"
+#define INVALID_INPUT_MESSAGE "Entrada invalida, intentelo de nuevo"
 #define TAX_PERCENTAGE 0.13
 #pragma endregion Macros
 
@@ -110,8 +108,8 @@ short userInputLoop<short>(string& inputField, const string& inputRequestMessage
             result = stoi(inputField, &numberOfCharactersParsed);
 
             success = inputField.length() == numberOfCharactersParsed
-                      && result >= numeric_limits<short>::min()
-                      && result <= numeric_limits<short>::max()
+                      && result >= SHRT_MIN
+                      && result <= SHRT_MAX
                       && inputValidationFunction(result);
         }
         catch (...)
@@ -136,27 +134,26 @@ int main()
     short rentalDays;
     string fullName, userInput;
 
-    // Se establece el formato de codificación de caracteres de la consola a UTF8 para que admita caracteres especiales,
-    // como las letras tildadas
-    SetConsoleOutputCP(CP_UTF8);
-
     cout << "Ingrese su nombre completo: ";
     getline(cin, fullName);
 
-    dailyCost = userInputLoop<float>(userInput, "Ingrese el costo diario por la renta del vehículo: ",
+    dailyCost = userInputLoop<float>(userInput, "Ingrese el costo diario por la renta del vehiculo: ",
                                      higherThanZeroValidator<float>);
 
-    rentalDays = userInputLoop<short>(userInput, "Ingrese la cantidad de días de renta del vehículo: ",
+    rentalDays = userInputLoop<short>(userInput, "Ingrese la cantidad de dias de renta del vehiculo: ",
                                       higherThanZeroValidator<short>);
 
+    cin.ignore();
+
     userWantsInsurance = yesOrNoInputRequest(option,
-         "¿Desea adquirir la protección extra en carretera? La misma tiene un costo del 5% sobre el costo del vehiculo (S/n): ");
+         "Desea adquirir la proteccion extra en carretera? La misma tiene un costo del 5% sobre el costo del vehiculo (S/n): ");
 
     userWantsCivilLiability = yesOrNoInputRequest(option,
-          "¿Desea adquirir el seguro de responsabilidad civil ante terceros? El mismo tiene un costo fijo de 5000 colones (S/n): ");
+          "Desea adquirir el seguro de responsabilidad civil ante terceros? El mismo tiene un costo fijo de 5000 colones (S/n): ");
 
     cout.precision(2);
     calculateCostsAndPrintInformation(fullName, dailyCost, rentalDays, userWantsInsurance, userWantsCivilLiability);
+    system("pause");
 
     return 0;
 }
@@ -180,7 +177,6 @@ bool yesOrNoInputRequest(char& option, const string& inputRequestMessage, const 
     while (!success)
     {
         cout << inputRequestMessage;
-        cin.sync();
         cin.get(option);
 
         optionUppercase = toupper(option);
@@ -207,12 +203,12 @@ float calculateCosts(float& costPerRentalDays, float& fee, float& tax, float& in
     float totalCost = 0;
 
     totalCost += costPerRentalDays = dailyCost * rentalDays;
-    totalCost += fee = dailyCost * FEE_PERCENTAGE;
-    totalCost += tax = dailyCost * TAX_PERCENTAGE;
+    totalCost += fee = totalCost * FEE_PERCENTAGE;
+    totalCost += tax = totalCost * TAX_PERCENTAGE;
 
     if (userWantsInsurance)
     {
-        totalCost += insuranceCost = dailyCost * INSURANCE_PERCENTAGE;
+        totalCost += insuranceCost = costPerRentalDays * INSURANCE_PERCENTAGE;
     }
 
     if (userWantsCivilLiability)
@@ -232,24 +228,24 @@ void calculateCostsAndPrintInformation(const string& userFullName, const float d
                                                                                  userWantsInsurance,
                                                                                  userWantsCivilLiability);
 
-    cout << fixed << "\nNombre completo: " << userFullName << "\nCantidad de días de renta del vehículo: " << rentalDays
-         << "\nCosto diario por renta del vehículo: " << dailyCost << " colones"
-         << "\nCosto por el total de días de renta: " << costPerRentalDays << " colones"
+    cout << fixed << "\nNombre completo: " << userFullName << "\nCantidad de dias de renta del vehiculo: " << rentalDays
+         << "\nCosto diario por renta del vehiculo: " << dailyCost << " colones"
+         << "\nCosto por el total de dias de renta: " << costPerRentalDays << " colones"
          << "\nTarifas: " << fee << " colones"
          << "\nImpuestos: " << tax << " colones"
-         << "\n¿El usuario desea adquirir la protección extra en carretera? (";
+         << "\nEl usuario desea adquirir la proteccion extra en carretera? (";
 
     if (userWantsInsurance)
     {
-        cout << "Sí): " << insuranceCost << " colones adicionales";
+        cout << "Si): " << insuranceCost << " colones adicionales";
     }
     else
     {
         cout << "No): Sin costo adicional";
     }
 
-    cout << "\n¿El usuario desea adquirir el seguro de responsabilidad civil ante terceros? ("
-         << (userWantsCivilLiability ? ("Sí): " + to_string(CIVIL_LIABILITY_COST) + " colones adicionales") : "No): Sin costo adicional")
+    cout << "\nEl usuario desea adquirir el seguro de responsabilidad civil ante terceros? ("
+         << (userWantsCivilLiability ? ("Si): " + to_string(CIVIL_LIABILITY_COST) + " colones adicionales") : "No): Sin costo adicional")
          << "\nCosto total: " << totalCost << endl;
 }
 #pragma endregion Function definitions
